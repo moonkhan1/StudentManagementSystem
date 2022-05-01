@@ -4,6 +4,9 @@
  */
 package service.menu;
 
+import bean.Config;
+import static bean.Config.users;
+import java.util.Scanner;
 import service.menu.interfac.MenuLoginServiceInter;
 
 /**
@@ -14,8 +17,24 @@ public class MenuLoginService implements MenuLoginServiceInter{
 
     @Override
     public void process() {
-        System.out.println("Login");
-    }
+        Scanner sc = new Scanner(System.in);
+        System.out.println("username:");
+        String username =sc.next();
+        sc = new Scanner(System.in);
+        System.out.println("password:");
+        String password =sc.next();
+        
+        
+//        if ((!username.equals("ayxan")&&password.equals("1234"))){
+//            throw new IllegalArgumentException("Username or password is invalid");
+//        }
+        if(users.stream().anyMatch(c -> username.equals(c.username))&& users.stream().anyMatch(c -> password.equals(c.password))){
+        Config.setLoggedIn(true); // Eger isdifadeci melumatlari duzgun daxil edibse true versin
+        }
+        else{
+            throw new IllegalArgumentException("Username or password is invalid");
+        }
+        }
     
     
 }

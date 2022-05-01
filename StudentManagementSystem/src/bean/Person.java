@@ -5,9 +5,9 @@
 package bean;
 
 public class Person {
-    private String name;
-    private String surname;
-    private int age;
+     String name;
+     String surname;
+     int age;
     
     //bos konstruktor(default saxlayiriq ki, Personun obyekti yaradila bilmesin, cunki ehtiyac yoxdur. 
     // Private versek construktoru olmayan ve Person'u extends eden classlar onu cagira bilmeyecek )
@@ -44,6 +44,12 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" + "name=" + name + ", surname=" + surname + '}';
+    }
+
     
 }
 

@@ -5,7 +5,7 @@
 package bean;
 
 
-public class Student {
+public class Student extends Person{
     private String schoolName;
     private int schoolship;
 

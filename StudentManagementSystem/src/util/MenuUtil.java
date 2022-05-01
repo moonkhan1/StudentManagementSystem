@@ -4,17 +4,15 @@ package util;
 import java.util.Scanner;
 
 public class MenuUtil{
-    public static Menu showMenu(){
-        Menu.showALLMenu();
+    public static void showMenu(){
         System.out.println("Please select an option: ");
+        Menu.showALLMenu();
         Scanner sc = new Scanner(System.in);
-        int selectedMenu = sc.nextInt();
+        int selectedMenuNumber = sc.nextInt();
         
         
-       return Menu.find(selectedMenu);
-    }
-    public static void processMenu(Menu menu){
-        menu.process();
+       Menu selectedMenu = Menu.find(selectedMenuNumber);
+       selectedMenu.process();
     }
 }
     
