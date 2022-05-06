@@ -4,11 +4,13 @@
  */
 package bean;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Ayxan
  */
-public class Teacher extends Person {
+public class Teacher extends Person{
     private String schoolName;
     private double salary;
 

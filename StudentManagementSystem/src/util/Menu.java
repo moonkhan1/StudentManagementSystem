@@ -4,6 +4,7 @@ package util;
 import bean.Config;
 import service.menu.MenuAddStudentService;
 import service.menu.MenuAddTeacherService;
+import service.menu.MenuExitService;
 import service.menu.MenuLoginService;
 import service.menu.interfac.MenuService;
 import service.menu.MenuRegisterService;
@@ -19,6 +20,7 @@ public enum Menu {
     SHOW_ALL_STUDENT(5,"Show students",new MenuShowStudentService()),
     SHOW_ALL_TEACHERS(6,"Show teachers",new MenuShowTeacherService()),
     SHOW_ALL_USERS(7,"Show users",new MenuShowUsersService()),
+    EXİT(8,"Exit",new MenuExitService()),
     UNKNOWN;
     
 

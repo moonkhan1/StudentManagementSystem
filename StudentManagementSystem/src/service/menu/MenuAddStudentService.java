@@ -8,6 +8,7 @@ import bean.Config;
 import bean.Student;
 import java.util.Scanner;
 import service.menu.interfac.MenuAddStudentServiceInter;
+import util.FileUtility;
 
 /**
  *
@@ -23,13 +24,23 @@ public class MenuAddStudentService implements MenuAddStudentServiceInter {
         sc = new Scanner(System.in);
         System.out.println("surname:");
         String surname =sc.next();
+        sc = new Scanner(System.in);
+        System.out.println("School name:");
+        String schoolName =sc.next();
+        sc = new Scanner(System.in);
+        System.out.println("Scholarship:");
+        String scholar =sc.next();
         
         
         Student s = new Student();
         s.setName(name);
         s.setSurname(surname);
+         s.setSurname(schoolName);
+          s.setSurname(scholar);
         
         Config.instance().setStudents(s);
+        FileUtility.writeObjectToFile(Config.instance(), "app.obj");
     }
+    
     
 }

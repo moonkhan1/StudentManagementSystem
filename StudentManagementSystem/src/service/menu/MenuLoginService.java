@@ -28,7 +28,7 @@ public class MenuLoginService implements MenuLoginServiceInter{
 //        if ((!username.equals("ayxan")&&password.equals("1234"))){
 //            throw new IllegalArgumentException("Username or password is invalid");
 //        }
-        if(users.stream().anyMatch(c -> username.equals(c.username))&& users.stream().anyMatch(c -> password.equals(c.password))){
+        if(users.stream().anyMatch(u_n -> username.equals(u_n.username))&& users.stream().anyMatch(u_n -> password.equals(u_n.password))){
         Config.setLoggedIn(true); // Eger isdifadeci melumatlari duzgun daxil edibse true versin
         }
         else{

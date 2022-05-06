@@ -6,6 +6,7 @@ package bean;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import util.FileUtility;
 
 // Serializable = Fayla yazila bilme
 public class Config implements Serializable{
@@ -16,6 +17,17 @@ public class Config implements Serializable{
     public static ArrayList<User> users = new ArrayList<>();
     public static  Config config = null; // Config classini diger classlardan cagirmaq ucun
 
+    
+    public static void initilize(){
+        Object obj = FileUtility.readObjectFromFile("app.obj");
+        Object obj2 = FileUtility.readObjectFromFile("users.obj");
+        if(obj == null || obj2 == null){
+            return;
+    }
+        if(obj instanceof Config || obj2 instanceof Config){
+            config = (Config)obj;
+        }
+    }
     public Teacher[] getTeachers() {
        Teacher[] t = new Teacher[teachers.size()];
         for(int i = 0; i< t.length;i++){

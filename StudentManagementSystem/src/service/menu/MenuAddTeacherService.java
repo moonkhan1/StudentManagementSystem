@@ -9,6 +9,7 @@ import bean.Student;
 import bean.Teacher;
 import java.util.Scanner;
 import service.menu.interfac.MenuAddTeacherServiceInter;
+import util.FileUtility;
 
 /**
  *
@@ -24,13 +25,22 @@ public class MenuAddTeacherService implements MenuAddTeacherServiceInter{
         sc = new Scanner(System.in);
         System.out.println("surname:");
         String surname =sc.next();
-        
+        sc = new Scanner(System.in);
+        System.out.println("School name:");
+        String schoolName =sc.next();
+        sc = new Scanner(System.in);
+        System.out.println("Salary:");
+        String salary =sc.next();
         
         Teacher t = new Teacher();
         t.setName(name);
         t.setSurname(surname);
+        t.setSurname(schoolName);
+        t.setSurname(salary);
         
         Config.instance().setTeachers(t);
+        FileUtility.writeObjectToFile(Config.instance(), "app.obj");
+        
     }
     
 }

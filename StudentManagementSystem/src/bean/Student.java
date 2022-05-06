@@ -4,8 +4,10 @@
  */
 package bean;
 
+import java.io.Serializable;
 
-public class Student extends Person{
+
+public class Student extends Person {
     private String schoolName;
     private int schoolship;
 
